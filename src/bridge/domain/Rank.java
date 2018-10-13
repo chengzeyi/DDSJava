@@ -1,6 +1,5 @@
 package bridge.domain;
 
-import java.io.UncheckedIOException;
 import java.util.*;
 
 public class Rank {
@@ -20,7 +19,7 @@ public class Rank {
 
     public static final List<Rank> RANKS = Arrays.asList(TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE);
 
-    private int score;
+    private final int score;
 
     /**
      * Gets the score.
@@ -35,7 +34,7 @@ public class Rank {
      * Gets the short name.
      * @return The short name.
      */
-    public char getShortName() {
+    public final char getShortName() {
         return shortName;
     }
 
@@ -45,7 +44,7 @@ public class Rank {
      * Gets the full name.
      * @return The full name.
      */
-    public String getFullName() {
+    public final String getFullName() {
         return fullName;
     }
 

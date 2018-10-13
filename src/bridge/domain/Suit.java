@@ -12,7 +12,7 @@ public class Suit {
 
     public static final List<Suit> SUITS = Arrays.asList(SPADES, HEARTS, DIAMONDS, CLUBS);
 
-    private int order;
+    private final int order;
 
     /**
      * Gets the order of the suit.
@@ -22,7 +22,7 @@ public class Suit {
         return order;
     }
 
-    private char shortName;
+    private final char shortName;
 
     /**
      * Gets the short name of the suit.
@@ -32,7 +32,7 @@ public class Suit {
         return shortName;
     }
 
-    private String fullName;
+    private final String fullName;
 
     /**
      * Gets the full name of the suit.
@@ -113,6 +113,4 @@ public class Suit {
         hashCode = (hashCode * 397) ^ (fullName != null ? fullName.hashCode() : 0);
         return hashCode;
     }
-
-    
 }
