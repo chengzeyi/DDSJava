@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The player position which has four types: north, east, south and west.
+ * Each player position also has an unique order and pbn index.
+ */
 public class PlayerPosition {
     public static final PlayerPosition NORTH = new PlayerPosition(0, 1, "North");
     public static final PlayerPosition EAST = new PlayerPosition(1, 2, "East");
@@ -53,7 +57,7 @@ public class PlayerPosition {
     }
 
     /**
-     * Initialzes the player position by the existing player position type that
+     * Initializes the player position by the existing player position type that
      * has the same order.
      * @param order The given order.
      */
@@ -95,8 +99,9 @@ public class PlayerPosition {
 
     /**
      * Judges whether the object equals to this.
-     * @param obj The object to compare.
-     * @return True if the object equals to this, else false.
+     * @param obj The object to compare with.
+     * @return True if the object equals to this.
+     * Else false.
      */
     @Override
     public boolean equals(Object obj) {
@@ -123,5 +128,6 @@ public class PlayerPosition {
     public int hashCode() {
         int hashCode = order;
         hashCode = (hashCode * 397) ^ (fullName != null ? fullName.hashCode() : 0);
+        return hashCode;
     }
 }

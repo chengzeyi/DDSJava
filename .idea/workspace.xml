@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516121ea-c48f-4475-9da7-8c87e0a53133" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/bridge/domain/PlayerPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/domain/CardColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bridge/domain/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bridge/domain/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bridge/domain/PlayerPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bridge/domain/PlayerPosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bridge/domain/Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bridge/domain/Rank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bridge/domain/Suit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bridge/domain/Suit.java" afterDir="false" />
     </list>
@@ -17,39 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-              <folding>
-                <element signature="e#64#65#0" expanded="true" />
-                <element signature="e#114#115#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Card.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Card.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bridge/domain/Card.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bridge/domain/Rank.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="255">
+              <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
               <folding>
-                <element signature="e#2921#2922#0" expanded="true" />
-                <element signature="e#2937#2938#0" expanded="true" />
-                <element signature="e#3040#3041#0" expanded="true" />
-                <element signature="e#3072#3073#0" expanded="true" />
-                <element signature="e#3150#3180#0" expanded="true" />
+                <element signature="e#165#166#0" expanded="true" />
+                <element signature="e#202#203#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
+                <element signature="e#693#694#0" expanded="true" />
+                <element signature="e#2105#2106#0" expanded="true" />
+                <element signature="e#2161#2162#0" expanded="true" />
+                <element signature="e#2401#2431#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,47 +43,41 @@
       <file leaf-file-name="PlayerPosition.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bridge/domain/PlayerPosition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="136">
+              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#114#115#0" expanded="true" />
-                <element signature="e#141#142#0" expanded="true" />
-                <element signature="e#320#321#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#570#571#0" expanded="true" />
-                <element signature="e#768#769#0" expanded="true" />
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#2991#2992#0" expanded="true" />
-                <element signature="e#3084#3085#0" expanded="true" />
-                <element signature="e#3298#3299#0" expanded="true" />
-                <element signature="e#3329#3330#0" expanded="true" />
-                <element signature="e#3350#3380#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Suit.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Rank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/domain/Rank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Suit.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bridge/domain/Suit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="238">
+              <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#98#99#0" expanded="true" />
-                <element signature="e#126#127#0" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#295#296#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
-                <element signature="e#1037#1038#0" expanded="true" />
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1963#1964#0" expanded="true" />
-                <element signature="e#2026#2027#0" expanded="true" />
-                <element signature="e#2351#2381#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardColor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/domain/CardColor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -109,6 +88,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -118,10 +98,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/bridge/domain/Card.java" />
-        <option value="$PROJECT_DIR$/src/bridge/domain/Suit.java" />
+        <option value="$PROJECT_DIR$/src/bridge/domain/CardColor.java" />
         <option value="$PROJECT_DIR$/src/bridge/domain/PlayerPosition.java" />
         <option value="$PROJECT_DIR$/src/bridge/domain/Rank.java" />
+        <option value="$PROJECT_DIR$/src/bridge/domain/Suit.java" />
+        <option value="$PROJECT_DIR$/src/bridge/domain/Card.java" />
       </list>
     </option>
   </component>
@@ -222,7 +203,7 @@
       <workItem from="1539410852118" duration="3262000" />
       <workItem from="1539414184249" duration="110000" />
       <workItem from="1539414316088" duration="1157000" />
-      <workItem from="1539418272631" duration="8887000" />
+      <workItem from="1539418272631" duration="12987000" />
     </task>
     <task id="LOCAL-00001" summary="class Rank finished">
       <created>1539414561778</created>
@@ -235,27 +216,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18625000" />
+    <option name="totallyTimeSpent" value="22725000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3297491" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32983023" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.2580645" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.2580645" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297491" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12853678" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -268,7 +259,6 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +321,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#165#166#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#2401#2431#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -345,13 +348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="e#2921#2922#0" expanded="true" />
-            <element signature="e#2937#2938#0" expanded="true" />
-            <element signature="e#3040#3041#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="e#3150#3180#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -480,67 +476,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/domain/CardColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bridge/domain/PlayerPosition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="136">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#114#115#0" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-            <element signature="e#3084#3085#0" expanded="true" />
-            <element signature="e#3298#3299#0" expanded="true" />
-            <element signature="e#3329#3330#0" expanded="true" />
-            <element signature="e#3350#3380#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bridge/domain/Rank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="153">
+          <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/domain/Suit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
           <folding>
-            <element signature="e#2921#2922#0" expanded="true" />
-            <element signature="e#2937#2938#0" expanded="true" />
-            <element signature="e#3040#3041#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="e#3150#3180#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bridge/domain/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bridge/domain/Suit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        <state relative-caret-position="255">
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#98#99#0" expanded="true" />
-            <element signature="e#126#127#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#1037#1038#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1963#1964#0" expanded="true" />
-            <element signature="e#2026#2027#0" expanded="true" />
-            <element signature="e#2351#2381#0" expanded="true" />
+            <element signature="e#165#166#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#2401#2431#0" expanded="true" />
           </folding>
         </state>
       </provider>

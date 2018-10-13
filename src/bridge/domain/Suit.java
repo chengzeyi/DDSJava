@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * The suit of the card.
+ * There are four types in total: spades, hearts, diamonds and clubs.
+ * Also each one has its unique order, short name and full name.
+ */
 public class Suit {
     public static final Suit SPADES = new Suit(0, 'S', "Spades");
     public static final Suit HEARTS = new Suit(1, 'H', "Hearts");
@@ -72,9 +77,9 @@ public class Suit {
 
     /**
      * Judges whether the object is the same as this.
-     * @param obj The object to compare.
-     * @return True if the object has the same order of this,
-     * else false.
+     * @param obj The object to compare with.
+     * @return True if the object has the same order of this.
+     * Else false.
      */
     @Override
     public boolean equals(Object obj) {

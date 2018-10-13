@@ -2,6 +2,11 @@ package bridge.domain;
 
 import java.util.*;
 
+/**
+ * The rank of the card type.
+ * There are totally thirteen types and each one has a score, short name
+ * and full name.
+ */
 public class Rank {
     public static final Rank TWO = new Rank(2, '2', "Two");
     public static final Rank THREE = new Rank(3, '3', "Three");
@@ -92,8 +97,9 @@ public class Rank {
 
     /**
      * Judges whether the object equals to this.
-     * @param obj The object to compare.
-     * @return True if their score is the same, else false.
+     * @param obj The object to compare with.
+     * @return True if their score is the same.
+     * Else false.
      */
     @Override
     public boolean equals(Object obj) {
