@@ -1,5 +1,6 @@
 package bridge.domain;
 
+import java.io.UncheckedIOException;
 import java.util.*;
 
 public class Rank {
@@ -22,7 +23,7 @@ public class Rank {
     private int score;
 
     /**
-     * Get the score.
+     * Gets the score.
      * @return The score.
      */
     public int getScore() {
@@ -31,7 +32,7 @@ public class Rank {
     private char shortName;
 
     /**
-     * Get the short name.
+     * Gets the short name.
      * @return The short name.
      */
     public char getShortName() {
@@ -41,7 +42,7 @@ public class Rank {
     private String fullName;
 
     /**
-     * Get the full name.
+     * Gets the full name.
      * @return The full name.
      */
     public String getFullName() {
@@ -88,5 +89,37 @@ public class Rank {
         this.score = rank.score;
         this.shortName = rank.shortName;
         this.fullName = rank.fullName;
+    }
+
+    /**
+     * Judges whether the object equals to this.
+     * @param obj The object to compare.
+     * @return True if their score is the same, else false.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Rank && ((Rank) obj).score == score;
+    }
+
+    /**
+     * Gets the string representation of the suit.
+     * @return The short name of the suit.
+     */
+    @Override
+    public String toString() {
+        return Character.toString(shortName);
+    }
+
+    /**
+     * Gets the hash code of the suit.
+     * The formula is hash code = (score * 397) ^ fullName.hashCode().
+     * @return The hash code of the suit.
+     */
+    @Override
+    @SuppressWarnings("unchecked")
+    public int hashCode() {
+        int hashCode = score;
+        hashCode = (hashCode * 397) ^ (fullName != null ? fullName.hashCode() : 0);
+        return hashCode;
     }
 }
