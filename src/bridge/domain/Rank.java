@@ -58,7 +58,7 @@ public class Rank {
      * @param score The given score.
      */
     public Rank(int score) {
-        this(Objects.requireNonNull(RANKS.stream().filter(rank -> rank.score == score).findAny().orElse(null)));
+        this(RANKS.stream().filter(rank -> rank.score == score).findAny().orElse(null));
     }
 
     /**
@@ -66,11 +66,11 @@ public class Rank {
      * @param shortName The given short name.
      */
     public Rank(char shortName) {
-        this(Objects.requireNonNull(RANKS.stream().filter(rank -> rank.shortName == shortName).findAny().orElse(null)));
+        this(RANKS.stream().filter(rank -> rank.shortName == shortName).findAny().orElse(null));
     }
 
     public Rank(String fullName) {
-        this(Objects.requireNonNull(RANKS.stream().filter(rank -> rank.fullName.equals(fullName)).findAny().orElse(null)));
+        this(RANKS.stream().filter(rank -> rank.fullName.equals(fullName)).findAny().orElse(null));
     }
 
     /**

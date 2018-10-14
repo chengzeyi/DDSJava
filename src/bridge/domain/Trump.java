@@ -52,7 +52,11 @@ public class Trump {
      * @param order
      */
     public Trump(int order) {
-        this(Objects.requireNonNull(TRUMPS.stream().filter(trump -> trump.getOrder() == order).findAny().orElse(null)));
+        this(TRUMPS.stream().filter(trump -> trump.getOrder() == order).findAny().orElse(null));
+    }
+
+    public Trump(char shortName) {
+        this(TRUMPS.stream().filter(trump -> trump.getShortName() == shortName).findAny().orElse(null));
     }
 
     public Trump(Trump trump)

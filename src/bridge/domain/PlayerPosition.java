@@ -62,7 +62,7 @@ public class PlayerPosition {
      * @param order The given order.
      */
     public PlayerPosition(int order) {
-        this(Objects.requireNonNull(PLAYERS.stream().filter(playerPosition -> playerPosition.order == order).findAny().orElse(null)));
+        this(PLAYERS.stream().filter(playerPosition -> playerPosition.order == order).findAny().orElse(null));
     }
 
     /**
@@ -71,15 +71,14 @@ public class PlayerPosition {
      * @param firstLetter The given first letter of its full name.
      */
     public PlayerPosition(char firstLetter) {
-        this(Objects.requireNonNull(PLAYERS.stream().filter(playerPosition -> playerPosition.firstLetter == firstLetter).findAny().orElse(null)));
+        this(PLAYERS.stream().filter(playerPosition -> playerPosition.firstLetter == firstLetter).findAny().orElse(null));
     }
 
     /**
      * Initializes the player position by the given player position.
      * @param playerPosition The given player position.
      */
-    private PlayerPosition(PlayerPosition playerPosition)
-    {
+    private PlayerPosition(PlayerPosition playerPosition) {
         this(playerPosition.order, playerPosition.pbnIndex, playerPosition.fullName);
     }
 

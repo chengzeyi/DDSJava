@@ -53,7 +53,11 @@ public class Suit {
      * @param order The order for selecting a suit type.
      */
     public Suit(int order) {
-        this(Objects.requireNonNull(SUITS.stream().filter(suit -> suit.order == order).findAny().orElse(null)));
+        this(SUITS.stream().filter(suit -> suit.order == order).findAny().orElse(null));
+    }
+
+    public Suit(char shortName) {
+        this(SUITS.stream().filter(suit -> suit.shortName == shortName).findAny().orElse(null));
     }
 
     /**
