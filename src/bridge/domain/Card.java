@@ -79,8 +79,8 @@ public class Card implements Comparable<Card> {
     }
 
     /**
-     * Compares the score of this card's rank and another
-     * card's rank.
+     * Compares this and another card by the scores of
+     * this card's rank and another card's rank.
      * @param o The another card to compare with.
      * @return If its is greater than other's, returns 1.
      * Else if its is less than other's, returns -1.

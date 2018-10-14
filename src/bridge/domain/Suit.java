@@ -14,6 +14,7 @@ public class Suit {
     public static final Suit HEARTS = new Suit(1, 'H', "Hearts");
     public static final Suit DIAMONDS = new Suit(2, 'D', "Diamonds");
     public static final Suit CLUBS = new Suit(3, 'C', "Clubs");
+    public static final Suit NO_TRUMP = new Suit(4, 'N', "NoTrump");
 
     public static final List<Suit> SUITS = Arrays.asList(SPADES, HEARTS, DIAMONDS, CLUBS);
 
@@ -92,6 +93,7 @@ public class Suit {
      * For hearts type, returns ♥.
      * For clubs type, returns ♣.
      * For diamonds type, returns ♦.
+     * For other types, returns the short name of it.
      * @return The string representation of the suit.
      */
     @Override
