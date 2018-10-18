@@ -46,13 +46,13 @@ public class BridgeGame {
         return contract;
     }
 
-    public BridgeGame(Dictionary<PlayerPosition, Deck> gameState, PlayerPosition declarer, String contract)
+    public BridgeGame(Dictionary<PlayerPosition, Deck> gameState, String contract)
     {
         this.gameState = gameState;
+        this.contract = new Contract(contract);
         tricks = new ArrayList<>();
-        this.declarer = declarer;
+        declarer = this.contract.getPlayerPosition();
         dummy = BridgeHelper.getNextPlayerPosition(BridgeHelper.getNextPlayerPosition(declarer));
-        this.contract = new Contract(contract, declarer);
         currentTrick = new Trick();
         currentTrick.setTrickDealer(BridgeHelper.getNextPlayerPosition(declarer));
     }

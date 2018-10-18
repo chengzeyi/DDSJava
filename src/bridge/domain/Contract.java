@@ -30,15 +30,20 @@ public class Contract {
     public void setPlayerPosition(PlayerPosition playerPosition) {
         this.playerPosition = playerPosition;
     }
-
-    public Contract(String contract, PlayerPosition declarer) {
-        value = Integer.parseInt(Character.toString(contract.charAt(0)));
-        playerPosition = declarer;
-        trump = new Trump(contract.charAt(1));
+    
+    public Contract(String contract) {
+        playerPosition = new PlayerPosition(contract.charAt(0));
+        value = Integer.parseInt(Character.toString(contract.charAt(1)));
+        trump = new Trump(contract.charAt(2));
     }
 
     public Contract() {
         trump = Trump.NO_TRUMP;
+    }
+
+    public String getShortString()
+    {
+        return playerPosition.getFirstLetter() + Integer.toString(value) + trump.getShortName();
     }
 
     @Override
