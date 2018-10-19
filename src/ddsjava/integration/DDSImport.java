@@ -4,7 +4,7 @@ import com.sun.jna.Library;
 import com.sun.jna.Native;
 
 public interface DDSImport extends Library {
-    DDSImport instance = (DDSImport) Native.load("C:\\Users\\cheng\\source\\intellij-repos\\DDSJava\\dll\\dds.dll", DDSImport.class);
+    DDSImport instance = (DDSImport) Native.load("dds", DDSImport.class);
 
     public int CalcDDtablePBN(DDTableDealPBN.ByValue tableDealPBN, DDTableResults.ByReference tableResults);
 

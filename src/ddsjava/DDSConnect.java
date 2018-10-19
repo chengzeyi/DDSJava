@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DDSConnect {
-    public ddsjava.dto.FutureTricks solveBoardPBN(BridgeGame game, int target, int solutions, int mode) throws DDSException {
+    public FutureTricks solveBoardPBN(BridgeGame game, int target, int solutions, int mode) throws DDSException {
         if (game.getCurrentTrick().getDeck().getCount() > 3) {
             throw new IllegalArgumentException("Invalid current trick cards count");
         }

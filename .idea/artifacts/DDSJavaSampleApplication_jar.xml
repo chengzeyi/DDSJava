@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DDSJavaSampleApplication:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DDSJavaSampleApplication_jar</output-path>
+    <root id="archive" name="DDSJava.jar">
+      <element id="module-output" name="DDSJava" />
+    </root>
+  </artifact>
+</component>
