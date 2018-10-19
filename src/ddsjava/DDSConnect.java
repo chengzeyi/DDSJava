@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DDSConnect {
-    public ddsjava.dto.FutureTricks solveBoardPBN(BridgeGame game, int target, int solutions, int mode) throws DDSSolveBoardException {
+    public ddsjava.dto.FutureTricks solveBoardPBN(BridgeGame game, int target, int solutions, int mode) throws DDSException {
         if (game.getCurrentTrick().getDeck().getCount() > 3) {
             throw new IllegalArgumentException("Invalid current trick cards count");
         }
@@ -26,7 +26,8 @@ public class DDSConnect {
         DDFutureTricks.ByReference ddsResult = new DDFutureTricks.ByReference();
         int res = DDSImport.instance.SolveBoardPBN(dealPBN, target, solutions, mode, ddsResult, 0);
         if (res != 1) {
-            throw new DDSSolveBoardException(res);
+            System.out.println(BridgeHelper.toPBN(game));
+            throw new DDSException(res);
         }
         FutureTricks result = new FutureTricks();
         result.setCards(ddsResult.cards);
@@ -48,7 +49,7 @@ public class DDSConnect {
         return result;
     }
 
-    public BestCard solveBoardPBNBestCard(BridgeGame game) throws DDSSolveBoardException {
+    public BestCard solveBoardPBNBestCard(BridgeGame game) throws DDSException {
         FutureTricks result = solveBoardPBN(game, -1, 1, 0);
         BestCard bestCard = new BestCard();
         bestCard.setCard(result.getFutureCards().getCards().get(0));
@@ -56,18 +57,18 @@ public class DDSConnect {
         return bestCard;
     }
 
-    public FutureTricks solveBoard(BridgeGame game) throws DDSSolveBoardException {
+    public FutureTricks solveBoard(BridgeGame game) throws DDSException {
         return solveBoardPBN(game, -1, 3, 0);
     }
 
-    public List<Contract> calcMakableContracts(String pbn) throws DDSCalcDDTableException {
+    public List<Contract> calcMakableContracts(String pbn) throws DDSException {
         List<Contract> ret = new ArrayList<>();
         DDTableResults.ByReference results = new DDTableResults.ByReference();
         DDTableDealPBN.ByValue dto = new DDTableDealPBN.ByValue();
         dto.setCards(DDSHelper.pbnStringToBytes(pbn));
         int res = DDSImport.instance.CalcDDtablePBN(dto, results);
         if (res != 1) {
-            throw new DDSCalcDDTableException(res);
+            throw new DDSException(res);
         }
         int index = 0;
         for (Trump trump : Trump.TRUMPS) {

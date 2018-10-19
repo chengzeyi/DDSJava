@@ -4,14 +4,11 @@ import bridge.domain.BridgeGame;
 import bridge.domain.Contract;
 import bridge.domain.PlayerPosition;
 import bridge.domain.utils.BridgeHelper;
-import ddsjava.DDSCalcDDTableException;
+import ddsjava.DDSException;
 import ddsjava.DDSConnect;
-import ddsjava.DDSSolveBoardException;
 import ddsjava.dto.BestCard;
 
-import javax.sound.midi.Soundbank;
 import java.util.List;
-import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
@@ -21,7 +18,7 @@ public class Application {
         List<Contract> contracts = null;
         try {
              contracts = dds.calcMakableContracts(pbnCode);
-        } catch (DDSCalcDDTableException e) {
+        } catch (DDSException e) {
             e.printStackTrace();
             System.out.println("Error Code: " + e.getErrorCode());
             System.exit(1);
@@ -35,12 +32,12 @@ public class Application {
             System.out.println("Contract: " + contract);
             BridgeGame game = BridgeHelper.getGameFromPBN(pbnCode, contract.getShortString());
             System.out.println("Trump: " + game.getContract().getTrump());
-            PlayerPosition player = game.getDeclarer();
+            PlayerPosition player = BridgeHelper.getNextPlayerPosition(game.getDeclarer());
             while (game.getCardsRemaining() > 0) {
                 BestCard result = null;
                 try {
                     result = dds.solveBoardPBNBestCard(game);
-                } catch (DDSSolveBoardException e) {
+                } catch (DDSException e) {
                     System.out.println("Error Message: " + e.getMessage());
                     e.printStackTrace();
                     System.exit(1);
@@ -50,12 +47,10 @@ public class Application {
                 if (game.getCurrentTrick().getDeck().getCount() == 0) {
                     System.out.println("Trick Winner: " + game.getTricks().get(game.getTricks().size() - 1).getTrickWinner());
                 }
-                System.out.println("-----------Results----------");
-                System.out.println("South/North: " + game.getNorthSouthTricksMade() + " tricks");
-                System.out.println("East/West: " + game.getEastWestTricksMade() + " tricks");
-                Scanner input = new Scanner(System.in);
-                input.next();
             }
+            System.out.println("-----------Results----------");
+            System.out.println("South/North: " + game.getNorthSouthTricksMade() + " tricks");
+            System.out.println("East/West: " + game.getEastWestTricksMade() + " tricks");
         }
     }
 }

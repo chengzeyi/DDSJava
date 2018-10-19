@@ -56,9 +56,9 @@ public class BridgeHelper {
             for ( Card card : deck.getCards().stream().filter(card -> card.getSuit().equals(suit)).collect(Collectors.toList())) {
                 sb.append(card.getRank().getShortName());
             }
-            sb.append(" ");
+            sb.append(".");
         }
-        return sb.toString().trim().replace(' ', '.');
+        return sb.deleteCharAt(sb.length() - 1).toString();
     }
 
     private static Enumeration<Card> readPBNCard(Suit suit, String cardString) {

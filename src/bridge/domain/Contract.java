@@ -31,10 +31,15 @@ public class Contract {
         this.playerPosition = playerPosition;
     }
     
-    public Contract(String contract) {
-        playerPosition = new PlayerPosition(contract.charAt(0));
-        value = Integer.parseInt(Character.toString(contract.charAt(1)));
-        trump = new Trump(contract.charAt(2));
+    public Contract(String contractShortStr) {
+        playerPosition = new PlayerPosition(contractShortStr.charAt(0));
+        if (contractShortStr.length() == 4) {
+            value = Integer.parseInt(contractShortStr.substring(2, 3));
+            trump = new Trump(contractShortStr.charAt(3));
+        } else {
+            value = Integer.parseInt(contractShortStr.substring(2, 4));
+            trump = new Trump(contractShortStr.charAt(4));
+        }
     }
 
     public Contract() {
@@ -43,7 +48,7 @@ public class Contract {
 
     public String getShortString()
     {
-        return playerPosition.getFirstLetter() + Integer.toString(value) + trump.getShortName();
+        return playerPosition.getFirstLetter() + ":" + Integer.toString(value) + trump.getShortName();
     }
 
     @Override

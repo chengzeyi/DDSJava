@@ -2,7 +2,7 @@ Error code=-2
 
 Deal data:
 trump=S
-first=W
+first=N
 index1=0 index2=0 remainCards=0
 index1=0 index2=1 remainCards=0
 index1=0 index2=2 remainCards=0
@@ -22,7 +22,7 @@ index1=3 index2=3 remainCards=0
 
 target=-1
 solutions=1
-mode=1
+mode=0
 
 
 	S --

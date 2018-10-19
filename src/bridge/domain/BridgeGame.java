@@ -46,12 +46,12 @@ public class BridgeGame {
         return contract;
     }
 
-    public BridgeGame(Dictionary<PlayerPosition, Deck> gameState, String contract)
+    public BridgeGame(Dictionary<PlayerPosition, Deck> gameState, String contractShortStr)
     {
         this.gameState = gameState;
-        this.contract = new Contract(contract);
+        contract = new Contract(contractShortStr);
         tricks = new ArrayList<>();
-        declarer = this.contract.getPlayerPosition();
+        declarer = contract.getPlayerPosition();
         dummy = BridgeHelper.getNextPlayerPosition(BridgeHelper.getNextPlayerPosition(declarer));
         currentTrick = new Trick();
         currentTrick.setTrickDealer(BridgeHelper.getNextPlayerPosition(declarer));
@@ -67,27 +67,21 @@ public class BridgeGame {
         int total = 0;
         Enumeration<Deck> decks = gameState.elements();
         while (decks.hasMoreElements()) {
-            total++;
-            decks.nextElement();
+            total += decks.nextElement().getCount();
         }
         return total;
     }
 
     public PlayerPosition playCard(Card card, PlayerPosition playerPosition) {
         nextPlayer = BridgeHelper.getNextPlayerPosition(playerPosition);
-        int count = currentTrick.getDeck().getCount();
-        if (count == 0) {
-            currentTrick = new Trick();
-            currentTrick.setTrickDealer(playerPosition);
-        }
-        if (count <= 4) {
+        if (currentTrick.getDeck().getCount() <= 4) {
             card.setPlayerPosition(playerPosition);
             currentTrick.getDeck().addCard(card);
         }
-        if (count == 4) {
+        if (currentTrick.getDeck().getCount() == 4) {
             tricks.add(currentTrick);
             PlayerPosition winner = findWinner(currentTrick, contract.getTrump());
-            currentTrick.setTrickDealer(winner);
+            currentTrick.setTrickWinner(winner);
             nextPlayer = winner;
             currentTrick = new Trick();
             currentTrick.setTrickDealer(winner);
