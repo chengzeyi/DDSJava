@@ -21,7 +21,7 @@
 
 ### DDS
 
-DDS（<https://github.com/dds-bridge/dds>）是开源的桥牌计算库，不仅能单线程计算，还能利用多线程提高效率。DDS的接口是典型的C语言式的，由结构、指针和基本数据类型来传递参数。在较新的版本中，DDS使用PBN（Portable Bridge Notation)来记录桥牌牌局状态。
+DDS（Double-Dummy Solver <https://github.com/dds-bridge/dds>）是开源的桥牌计算库，不仅能单线程计算，还能利用多线程提高效率。DDS的接口是典型的C语言式的，由结构、指针和基本数据类型来传递参数。在较新的版本中，DDS使用PBN（Portable Bridge Notation)来记录桥牌牌局状态。
 
 ### PBN
 
@@ -63,9 +63,9 @@ public FutureTricks solveBoard(BridgeGame game) throws DDSException
 public List<Contract> calcMakableContracts(String pbn) throws DDSException
 ```
 
-### DDSDomain
+### Bridge.Domain
 
-DDSDomain提供了组成桥牌游戏基本部件的类（BridgeGame, Card, CardColor, Contract, Deck, PlayerPosition, Rank, Suit, Trick, Trump），这些类的设计均考虑到了对于DDS的兼容性。
+Bridge.Domain提供了组成桥牌游戏基本部件的类（BridgeGame, Card, CardColor, Contract, Deck, PlayerPosition, Rank, Suit, Trick, Trump），这些类的设计均考虑到了对于DDS的兼容性。
 
 ### DDSException
 
