@@ -8,14 +8,14 @@
 
 ## 运行时环境
 
-Java version 1.8 32-bit.
-JNA(Java Native Access 5.0.0)
-Windows or Debian/Ubuntu system.
+- Java version 1.8 32-bit.
+- JNA(Java Native Access 5.0.0)
+- Windows or Debian/Ubuntu system.
 
 ## 开发环境
 
-Intellij idea 2018 with JDK 1.8 32-bit.
-JNA(Java Native Access 5.0.0)
+- Intellij idea 2018 with JDK 1.8 32-bit.
+- JNA(Java Native Access 5.0.0)
 
 ## 基本介绍
 
@@ -45,8 +45,8 @@ public interface DDSImport extends Library {
 }
 ```
 
-CalcDDtablePBN可计算共20种初始订约，每个牌手5种（4个花色+无将）。
-SolveBoardPBN可计算下一步出牌。
+- CalcDDtablePBN可计算共20种初始订约，每个牌手5种（4个花色+无将）。
+- SolveBoardPBN可计算下一步出牌。
 
 ### JNA Structure
 
@@ -165,6 +165,7 @@ public class Application {
 
 ### Output
 
+```code
 Board: E:AT5.AJT.A632.KJ7 Q763.KQ9.KQJ94.T 942.87653..98653 KJ8.42.T875.AQ42
 Best Results:
 North:8♠
@@ -259,3 +260,4 @@ Trick Winner: North
 South/North: 8 tricks
 East/West: 5 tricks
 ......
+```
