@@ -13,8 +13,7 @@ public class BridgeHelper {
             return new PlayerPosition(currentSide.getOrder() + 1);
         }
     }
-
-
+    
     public static BridgeGame getGameFromPBN(String pbnHand, String contract) {
         Dictionary<PlayerPosition, Deck> hands = new Hashtable<>();
         String[] pbnHands = pbnHand.split(":|\\s");

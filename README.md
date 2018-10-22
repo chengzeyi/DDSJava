@@ -50,9 +50,9 @@ public interface DDSImport extends Library {
 
 ### JNA Structure
 
-提供了一组类来模拟DDS种的C语言结构。
+提供了一组类来模拟DDS中的C语言结构。
 
-### DDSConnect
+### class DDSConnect
 
 DDSConnect封装了以上的JNA接口，使得开发者可通过面向对象的方式操作数据。
 
@@ -63,13 +63,174 @@ public FutureTricks solveBoard(BridgeGame game) throws DDSException
 public List<Contract> calcMakableContracts(String pbn) throws DDSException
 ```
 
-### Bridge.Domain
+### package bridge.domain
 
-Bridge.Domain提供了组成桥牌游戏基本部件的类（BridgeGame, Card, CardColor, Contract, Deck, PlayerPosition, Rank, Suit, Trick, Trump），这些类的设计均考虑到了对于DDS的兼容性。
+bridge.domain提供了组成桥牌游戏基本部件的类（BridgeGame, Card, CardColor, Contract, Deck, PlayerPosition, Rank, Suit, Trick, Trump），并提供一个子包（utils），这些类的设计均考虑到了对于DDS的兼容性。
 
-### DDSException
+#### class Bridge
 
-提供了一个异常类用于解读DDS所返回的错误代码
+BridgeGame提供了对于牌局的基本操作，包括获得当前墩、获得当前牌桌状态、获得所有已经完成的墩、获得庄家、获得明手、获得剩余牌数、出牌并）取下一个玩家的位置、获取南北和东西的墩数等方法。
+
+```Java
+Trick getCurrentTrick() // 返回当前墩（可以用来判断上一回合是否已经结束）。
+Dictionary<PlayerPosition, Deck> getGameState() // 返回当前牌桌状态，其中每一个PlayerPosition都有一个Deck。
+List<Trick> getTricks() // 获取已经完成的所有的墩（时间顺序）。
+PlayerPosition getDeclarer() // 获取庄家。
+PlayerPosition getDummy() // 获取明手。
+Contract getContract() // 获取定约。
+BridgeGame(Dictionary<PlayerPosition, Deck> gameState, String contractShortStr) // 构造函数，gameState是牌桌状态，contractShortStr的格式同Contract.getShortString()。
+int getCardsRemaining() // 获得牌桌上剩余的牌的数量。
+PlayerPosition playerCard(Card card, PlayerPosition playerPosition) // 出一张牌，参数card是牌，playerPosition是出牌人的位置，返回下一个出牌人的位置。
+int getNorthSouthTricksMade() // 获得南北得到的墩数。
+int getEastWestTricksMade() // 获得东西得到的墩数。
+```
+
+#### class Card
+
+Card描述了一张牌的基本信息，并实现了Comparable接口。
+
+```Java
+PlayerPosition getPlayerPosition() // 获得这张牌的所有者（出派人）的位置。
+void setPlayerPosition(PlayerPosition playerPosition) // 设置这张牌的所有者（出派人）的位置。
+void getRand() // 获得这张牌的分值。
+void getSuit() // 获得这张牌的花色。
+Card(Rank rank, Suit suit) // 构造函数，两个参数分别是这张牌的分值和花色。
+Card(int rankScore, Suit suit) // 构造函数，rankScore将被用来构造一个新的Rank。
+CardColor getColor() //获得这张牌的颜色，CardColor是枚举类，其值为BLACK或RED。
+```
+
+重载了compareTo、equals、toString、hashCode。
+
+#### class Contract
+
+Contract描述了定约。
+
+```Java
+int getValue() // 获得定约的值。
+void setValue(int value) // 设置定约的值。
+Trump getTrump() // 获得将牌。
+void setTrump(Trump trump) //设置将牌。
+PlayerPosition getPlayerPosition() // 获得庄家的位置。
+void setPlayerPosition() // 设置庄家的位置。
+Contract() // 无参构造函数。
+Contract(String contractShortStr) // 构造函数，参数contractShortStr的格式见下。
+String getShortString() // 返回定约的内容（简单形式），格式为“playerPosition.getFirstLetter() + ":" + Integer.toString(value) + trump.getShortName()”。
+```
+
+重载了toString。
+
+#### class Deck
+
+Deck描述了一个牌堆
+
+```Java
+List<Card> getCards() // 获得牌堆中所有的牌。
+void setCards() // 设置牌堆中所有的牌。
+Card getTopCard() // 获得最顶端的牌。
+Card getBottomCard() // 获得最底端的牌。
+Card getCardWithHighestRank() // 获得分值最大的牌。
+boolean notEmpty() // 判断牌堆是否为非空。
+void removeCard(Card card) // 从牌堆里移走指定的牌。
+void addCard(Card card) // 向牌堆里加入指定的牌。
+Card getCard(Rank rank, Suit suit) // 获得牌堆里具有指定分值和花色的牌。
+Card getCard(int score, Suit suit) // 同上。
+boolean has(Rank rank, Suit suit) // 判断牌堆里是否具有指定分值和花色的牌。
+boolean has(int score, Suit suit) // 同上。
+int getCount() // 获得牌堆里牌的总数。
+```
+
+重载了toString。
+
+#### class PlayerPosition
+
+PlayerPosition描述了一个玩家的位置，该类只有四种实例。
+
+| order | pbnIndex | fullName | firstLetter |
+| ------ | ------ | ------ | ------|
+| 0 | 1 | North | N |
+| 1 | 2 | East | E |
+| 2 | 3 | South | S |
+| 3 | 0 | West | W |
+
+各种get与set方法和构造函数不再赘述，重载了equals、toString和hashCode。
+
+#### class Rank
+
+Rank描述了所有合法的牌的分值，该类只有十三种实例。
+
+| score | shortName | fullName |
+| ------ | ------ | ------ |
+| 2 | 2 | Two |
+| 3 | 3 | Three |
+| 4 | 4 | Four |
+| 5 | 5 | Five |
+| 6 | 6 | Six |
+| 7 | 7 | Seven |
+| 8 | 8 | Eight |
+| 9 | 9 | Nine |
+| 10 | T | Ten |
+| 11 | J | Jack |
+| 12 | Q | Queen |
+| 13 | K | King |
+| 14 | A | Ace |
+
+各种get与set方法和构造函数不再赘述，重载了equals、toString和hashCode。
+
+#### class Suit
+
+Suit 描述了所有合法的花色，该类只有五个实例。
+
+| order | shortName | fullName |
+| ------ | ------ | ------ |
+| 0 | S | Spades |
+| 1 | H | Hearts |
+| 2 | D | Diamonds |
+| 3 | C | Clubs |
+| 4 | N | NoTrump |
+
+各种get与set方法和构造函数不再赘述，重载了equals、toString和hashCode。
+
+#### class Trick
+
+Trick描述了一回合中的出牌。
+
+```Java
+PlayerPosition getTrickDealer() // 获得第一个出牌的人的位置。
+void setTrickDealer(PlayerPosition trickDealer) // 设置第一个出牌的人的位置。
+Deck getDeck() // 获得这一回合中出过的牌。
+void setDeck(Deck deck) // 设置这一回合中出过的牌。
+PlayerPosition getTrickWinner() // 获得本回合赢家。
+void setTrickWinner(PlayerPosition trickWinner) // 设置本回合赢家。
+Suit getTrickDealerSuit() // 获得第一个出牌的人所出的牌的花色。
+Trick() // 无参构造函数。
+```
+
+### class Trump
+
+Trump描述了将牌的信息，其只有五种实例，同Suit。
+
+### package utils
+
+utils提供类一些工具类。
+
+#### class BridgeHelper
+
+BridgeHelper包括了一些常用的静态函数。
+
+```Java
+PlayerPosition getNextPlayerPosition(PlayerPosition currentSide) // 返回currentSide的下家。
+BridgeGame getGameFromPBN(String pbnHand, String contract) // 根据PBNHand和定约（shortString)获得一个BridgeGame的实例。
+String toPBN(BridgeGame game) // 将game转换为PBNHand。
+String DeckToPBNPlay(Deck deck) // 将deck转换为PBNPlay。
+String DeckToPBNHand(Deck deck) // 将Deck转换为PBNHand。
+Enumeration<Card> readPBNCard(Suit suit, String cardString) // 读取PBNCard。
+Deck getDeck(String pbnHand) // 根据pbnHand，获得牌堆。
+Card getCard(String card) // 读取单个卡牌。
+```
+
+### class DDSException
+
+DDSExpection提供了一个异常类用于解读DDS所返回的错误代码
 
 | Error Code | Explanation |
 | ------ | ------ |
